@@ -23,7 +23,6 @@ $store_img = isset($store['img']) ? 'data:image/png;base64,' . base64_encode($st
 // Include category and product fetch logic
 $categoryHTML = include('../server/fetchcategory.php');
 $productHTML = include('../server/fetchproduct.php');
-$lastproductHTML = include('../server/fetchproduct.php');
 ?>
 
 <!DOCTYPE html>

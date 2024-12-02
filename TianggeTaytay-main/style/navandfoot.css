@@ -96,6 +96,10 @@
     font-weight: 500;
 }
 
+.search-results p:focus-visible {
+    background-color: rgb(45, 45, 45, 0.05);
+    outline: none;
+}
 
 .search-results.open {
     display: block;
@@ -138,6 +142,7 @@
     height: 4px;
     background-color: #0033a0;
     position: absolute;
+    border-radius: 50px;
     bottom: -4px;
     left: 50%;
     transform: translateX(-50%);
@@ -304,42 +309,42 @@
 }
 
 
-       .dropdown-container {
-        display: flex;
-        align-items: center;
-        width: 100px;
-        justify-content: space-between;
-        cursor: pointer;
-        position: relative;
-    }
+    .dropdown-container {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
 
-    .dropdown-container img {
-        transition: transform 0.3s ease; 
-    }
+.dropdown-container img {
+    transition: transform 0.3s ease; 
+}
 
-    .dropdown-menu {
-        display: none; 
-        position: absolute;
-        top: 70px;
-        right: 30px;
-        background-color: white;
-        border: 1px solid #ccc;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        padding: 10px;
-        z-index: 100;
-    }
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+}
 
-    .dropdown-menu a {
-        display: block;
-        text-decoration: none;
-        color: #333;
-        padding: 8px 12px;
-        font-weight:550;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-    }
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    font-weight:550;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
 
-    .dropdown-menu a:hover {
-        background-color: #f0f0f0;
-    }
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}

@@ -88,7 +88,7 @@ const renderPage = async () => {
     total_records,
   } = await fetchProducts();
 
-  categoryLabel.textContent = category;
+  categoryLabel.textContent = category || "All Categories";
 
   // Render products
   productsField.innerHTML = ""; // Clear loading message

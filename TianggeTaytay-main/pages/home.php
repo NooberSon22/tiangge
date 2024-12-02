@@ -187,5 +187,4 @@ include_once '../server/fetchproduct.php';
     </footer>
 
 </body>
-
 </html>

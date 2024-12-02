@@ -5,20 +5,20 @@
     const closeFormButton = document.getElementById("closeFormButton");
 
     // Show the form
-    showFormButton.addEventListener("click", function () {
-      formContainer.classList.remove("form-hidden");
-    });
+    // showFormButton.addEventListener("click", function () {
+    //   formContainer.classList.remove("form-hidden");
+    // });
 
     // Hide the form
-    closeFormButton.addEventListener("click", function () {
-      formContainer.classList.add("form-hidden");
-    });
+    // closeFormButton.addEventListener("click", function () {
+    //   formContainer.classList.add("form-hidden");
+    // });
 
     // Optional: Close the form when clicking outside it
     document.addEventListener("click", function (e) {
-      if (!formContainer.contains(e.target) && e.target !== showFormButton) {
-        formContainer.classList.add("form-hidden");
-      }
+      // if (!formContainer.contains(e.target) && e.target !== showFormButton) {
+      //   formContainer.classList.add("form-hidden");
+      // }
     });
   });
 
@@ -146,17 +146,17 @@ const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirmpassword');
 
 // Add event listener to the cancel button
-cancelButton.addEventListener('click', function () {
-    // Clear any error messages when cancel button is clicked
-    errorContainer.innerHTML = '';
+// cancelButton.addEventListener('click', function () {
+//     // Clear any error messages when cancel button is clicked
+//     errorContainer.innerHTML = '';
 
-    // Clear the password and confirm password input fields
-    passwordInput.value = '';
-    confirmPasswordInput.value = '';
+//     // Clear the password and confirm password input fields
+//     passwordInput.value = '';
+//     confirmPasswordInput.value = '';
 
-    // Assuming you have a function to hide the form
-    hideEditForm();
-});
+//     // Assuming you have a function to hide the form
+//     hideEditForm();
+// });
 
 
 

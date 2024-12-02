@@ -67,7 +67,7 @@ const ProductCard = (id, img, name, price) => {
 
   div.addEventListener("click", () => {
     window.location.href = `http://localhost:3000/pages/view-product.php?id=${id}`;
-  })
+  });
 
   div.appendChild(productImage);
   div.appendChild(productName);
@@ -78,7 +78,6 @@ const ProductCard = (id, img, name, price) => {
 
 /** Fetch Categories */
 const fetchCategories = async () => {
-
   try {
     const response = await fetch(
       "http://localhost:3000/server/products-fetch-ui.php?component=category"

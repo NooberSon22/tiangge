@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $sellerHTML = include('../server/fetchstore.php');
 
@@ -50,11 +50,11 @@ $sellerHTML = include('../server/fetchstore.php');
         </div>
 
         <div class="store">
-            <?php 
+            <?php
 
-echo $sellerHTML;
+            echo $sellerHTML;
 
-?>
+            ?>
         </div>
 
     </div>

@@ -14,7 +14,7 @@
         <p>Become a Seller? <a href="register.php">Register Now</a></p>
     </div>
     <?php
-        include("../components/nav.php");
+    include("../components/nav.php");
     ?>
 
     <main class="container">
@@ -89,7 +89,7 @@
                     <img src="../assets/arrow-icon.png" alt="">
                     <span>Products</span>
                     <img src="../assets/arrow-icon.png" alt="">
-                    <span class="category">All</span>
+                    <span class="category">All Categories</span>
                 </div>
 
                 <div class="products" data-page="<?php echo isset($_GET['page']) ? $_GET['page'] : 1; ?>" data-type="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-category="<?php echo isset($_GET['category']) ? $_GET['category'] : null; ?>">

@@ -18,64 +18,64 @@ include("../server/fetchstoreinfo.php");
 </head>
 
 <style>
-.store-name {
-    border-bottom: 1px solid #dddddd !important;
-    border-radius: 0 !important;
-}
+    .store-name {
+        border-bottom: 1px solid #dddddd !important;
+        border-radius: 0 !important;
+    }
 
-.dropdown-menu {
-    text-align: center;
-}
+    .dropdown-menu {
+        text-align: center;
+    }
 
-.dropdown-menu .store-name {
-    font-weight: 600;
-}
+    .dropdown-menu .store-name {
+        font-weight: 600;
+    }
 
-.dropdown-menu .store-name:hover {
-    background-color: #fff !important;
-}
+    .dropdown-menu .store-name:hover {
+        background-color: #fff !important;
+    }
 
-.hidden {
-    display: none;
-}
+    .hidden {
+        display: none;
+    }
 
-.basic-info {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
+    .basic-info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
 
-.basic-info input {
-    width: 100%;
-}
+    .basic-info input {
+        width: 100%;
+    }
 
-.basic-info div {
-    display: flex;
-    width: 32%;
-    flex-direction: column;
-}
+    .basic-info div {
+        display: flex;
+        width: 32%;
+        flex-direction: column;
+    }
 
-.account-row {
-    display: flex;
-    width: 68%;
-}
+    .account-row {
+        display: flex;
+        width: 68%;
+    }
 
-.account-row div {
-    margin-right: 20px;
-    width: 100%;
-}
+    .account-row div {
+        margin-right: 20px;
+        width: 100%;
+    }
 
-.edit-container img {
-    width: 15px;
-    height: 15px;
-}
+    .edit-container img {
+        width: 15px;
+        height: 15px;
+    }
 
-#updateInfo h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
-    color: #0033a0;
-    text-align: left !important;
-}
+    #updateInfo h2 {
+        font-size: 22px;
+        margin-bottom: 16px;
+        color: #0033a0;
+        text-align: left !important;
+    }
 </style>
 
 <body>
@@ -122,6 +122,7 @@ include("../server/fetchstoreinfo.php");
             <a href="#" class="active">Manage Account</a>
             <a href="store-info.php">Manage Store</a>
         </div>
+
         <div class="">
             <div class="rounded-box" id="accountInfo">
                 <div class="section">
@@ -135,21 +136,21 @@ include("../server/fetchstoreinfo.php");
                     <div class="info-row">
                         <div class="info-group">
                             <div><strong>Username</strong></div>
-                            <p><?php echo $seller_username?></p>
+                            <p><?php echo $seller_username ?></p>
                         </div>
                         <div class="info-group">
                             <div><strong>Email</strong></div>
-                            <p><?php echo $seller_email?></p>
+                            <p><?php echo $seller_email ?></p>
                         </div>
                     </div>
                     <div class="info-group">
                         <div><strong>Password</strong></div>
                         <p>
-                            <?php 
-                        $password = $seller_password['password'] ?? 'N/A';
-                        $maskedPassword = str_repeat('•••', strlen($password));
-                        echo htmlspecialchars($maskedPassword);
-                        ?>
+                            <?php
+                            $password = $seller_password['password'] ?? 'N/A';
+                            $maskedPassword = str_repeat('•••', strlen($password));
+                            echo htmlspecialchars($maskedPassword);
+                            ?>
                         </p>
                     </div>
                 </div>
@@ -266,7 +267,7 @@ include("../server/fetchstoreinfo.php");
                     </div>
                     <div>
                         <label for="age">Age</label>
-                        <input type="number" name="age" id="age" value="<?php echo $seller_age?>" required>
+                        <input type="number" name="age" id="age" value="<?php echo $seller_age ?>" required>
                     </div>
                 </div>
                 <div class="basic-info">
@@ -374,7 +375,7 @@ include("../server/fetchstoreinfo.php");
                         placeholder="Confirm new password">
                 </div>
                 <?php if (isset($_GET['error'])): ?>
-                <p style="color: red;"><?php echo htmlspecialchars($_GET['error']); ?></p>
+                    <p style="color: red;"><?php echo htmlspecialchars($_GET['error']); ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -406,7 +407,7 @@ include("../server/fetchstoreinfo.php");
             </div>
             <div>
                 <label for="age">Age</label>
-                <input type="number" name="age" id="age" value="<?php echo $seller_age?>" required>
+                <input type="number" name="age" id="age" value="<?php echo $seller_age ?>" required>
             </div>
         </div>
         <div class="basic-info">
@@ -437,40 +438,40 @@ include("../server/fetchstoreinfo.php");
 
     <!-- Add this to include the JavaScript -->
     <script>
-    document.getElementById('updateInfo').addEventListener('submit', function(e) {
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmpassword').value;
-        const errorContainer = document.querySelector('#error-container');
-        let isValid = true;
+        document.getElementById('updateInfo').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmpassword').value;
+            const errorContainer = document.querySelector('#error-container');
+            let isValid = true;
 
-        // Clear any previous errors
-        errorContainer.innerHTML = '';
+            // Clear any previous errors
+            errorContainer.innerHTML = '';
 
-        // Check if password and confirm password match
-        if (password !== confirmPassword) {
-            e.preventDefault();
-            const errorMsg = document.createElement('p');
-            errorMsg.textContent = 'Passwords do not match.';
-            errorMsg.style.color = 'red';
-            errorContainer.appendChild(errorMsg);
-            isValid = false;
-        }
+            // Check if password and confirm password match
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = 'Passwords do not match.';
+                errorMsg.style.color = 'red';
+                errorContainer.appendChild(errorMsg);
+                isValid = false;
+            }
 
-        // Check if password is at least 8 characters long
-        if (password.length < 8) {
-            e.preventDefault();
-            const errorMsg = document.createElement('p');
-            errorMsg.textContent = 'Password must be at least 8 characters long.';
-            errorMsg.style.color = 'red';
-            errorContainer.appendChild(errorMsg);
-            isValid = false;
-        }
+            // Check if password is at least 8 characters long
+            if (password.length < 8) {
+                e.preventDefault();
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = 'Password must be at least 8 characters long.';
+                errorMsg.style.color = 'red';
+                errorContainer.appendChild(errorMsg);
+                isValid = false;
+            }
 
-        // Only submit the form if all validations pass
-        if (!isValid) {
-            e.preventDefault(); // Prevent form submission
-        }
-    });
+            // Only submit the form if all validations pass
+            if (!isValid) {
+                e.preventDefault(); // Prevent form submission
+            }
+        });
     </script>
 
 </body>

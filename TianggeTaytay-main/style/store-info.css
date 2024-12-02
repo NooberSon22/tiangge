@@ -40,7 +40,30 @@ h2 {
     display: flex;
     width: 33.3%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 40px;
+}
+
+select {
+  flex: 1;
+  min-width: 200px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(44, 44, 44, 0.7)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding: 12px 20px;
+  border: 1px solid rgb(44, 44, 44, 0.1);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: rgb(44, 44, 44, 0.7);
+  cursor: pointer;
+}
+
+.store-info-card p {
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .info-card {
@@ -155,9 +178,7 @@ textarea {
 
 /* Sidebar styling */
 .sidebar {
-    width: 250px;
-    height: 180.3%;
-    position: absolute;
+    width: 270px;
     border-right: 1px solid #cdcdcd;
     left: 0;
     padding: 20px 0px;
@@ -184,19 +205,24 @@ textarea {
   background-color: #cdcdcd;
 }
 
+
 /* Main content adjustment */
 .main-content {
-    padding-left: 330px;
-    padding-right: 100px;
     margin-bottom: 20px;
-    height: 1550px;
     border-bottom: 1px solid #cdcdcd41;
+    display: flex;
+    gap: 50px;
 }
 
 .main-products-container {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 50px;
+}
+
+.account-container {
+  flex: 1;
+  padding-right: 100px;
 }
 
 .child-container {
@@ -211,6 +237,12 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1em;
+}
+
+.filterbar {
+    display: flex;
+    gap: 20px;
 }
 
 .add-button {
@@ -219,16 +251,21 @@ textarea {
 }
 
 button {
-    background-color:#0033a0;
-    width: 114px;
+    background-color: #0033a0;
+    width: 100%;
     color: white;
     height: 40px;
+    padding-inline: 20px;
     border: none;
     border-radius: 8px;
     outline: none;
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
+}
+
+#showFormButton {
+  width: 100%;
 }
 
 .products-container {
@@ -326,7 +363,7 @@ button {
     justify-content: space-around;
   }
 
-  input, select {
+  input {
     width: 100%;
     height: 40px;
     font-size: 17px;

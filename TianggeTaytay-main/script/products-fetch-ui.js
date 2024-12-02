@@ -14,6 +14,8 @@ const displayCategories = async () => {
     const data = await response.json();
     const { categories } = data;
 
+    categories.unshift("All Categories");
+
     categories.forEach((product_category) => {
       const option = document.createElement("div");
       option.innerHTML = `
@@ -24,7 +26,8 @@ const displayCategories = async () => {
         `;
 
       option.addEventListener("click", () => {
-        category = product_category;
+        category =
+          product_category === "All Categories" ? "" : product_category;
         renderPage();
       });
       categoryField.appendChild(option);
