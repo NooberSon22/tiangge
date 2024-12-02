@@ -9,6 +9,7 @@ include_once '../server/fetchstoreinfo.php';
 
 $storeDescription = htmlspecialchars($store['description'] ?? 'N/A');
 $storeName = htmlspecialchars($store['storename'] ?? 'N/A');
+echo $storeName;
 $storeContact = htmlspecialchars($seller['store_contact'] ?? 'N/A');
 $storeEmail = htmlspecialchars($store['email'] ?? 'N/A');
 
@@ -324,15 +325,15 @@ $storeEmail = htmlspecialchars($store['email'] ?? 'N/A');
 
                     </div>
 
-                    <div class="products-container">
+                    <!-- <div class="products-container">
                         <?php if (!empty($product_details)): ?>
                             <?php foreach ($product_details as $product): ?>
                                 <div class="product-card">
-                                    <!-- Display Product Image -->
+                                    
                                     <img src="<?php echo isset($product['first_image']) ? 'data:image/jpeg;base64,' . base64_encode($product['first_image']) : '../assets/default-product.png'; ?>"
                                         alt="Product Image">
 
-                                    <!-- Product Name and Price -->
+                                   
                                     <h3><?php echo htmlspecialchars($product['product_name']); ?></h3>
                                     <p>₱<?php echo htmlspecialchars($product['price']); ?></p>
                                 </div>
@@ -340,10 +341,12 @@ $storeEmail = htmlspecialchars($store['email'] ?? 'N/A');
                         <?php else: ?>
                             <p>No products found for this store.</p>
                         <?php endif; ?>
-                    </div>
+                    </div> -->
 
                     <!-- Pagination Controls -->
 
+                    <div class="products" data-storename="<?php echo $store_name; ?>">
+                    </div>
                 </div>
             </div>
 
@@ -448,7 +451,20 @@ $storeEmail = htmlspecialchars($store['email'] ?? 'N/A');
             </div>
         </form>
     </div>
+
     <div class="pagination">
+        <p class="results"></p>
+
+        <div class="pages">
+            <!-- <div class="button back-page">
+                    <img src="../assets/pagination-right.png" alt="">
+                </div>
+                <div class="button next-page">
+                    <img src="../assets/pagination-next.png" alt="">
+                </div> -->
+        </div>
+    </div>
+    <!-- <div class="pagination">
 
         <?php if ($current_page > 1): ?>
             <a href="?page=<?php echo $current_page - 1; ?>" class="prev"><img style="width: 12px; height: 12px; transform: rotate(180deg);" src="../assets/arrowrightblack.png" alt=""></a>
@@ -463,7 +479,7 @@ $storeEmail = htmlspecialchars($store['email'] ?? 'N/A');
             <a href="?page=<?php echo $current_page + 1; ?>" class="next"><img style="width: 12px; height: 12px;" src="../assets/arrowrightblack.png" alt=""></a>
         <?php endif; ?>
 
-    </div>
+    </div> -->
 
     <footer>
         <div class="top-footer">
@@ -624,5 +640,6 @@ $storeEmail = htmlspecialchars($store['email'] ?? 'N/A');
         });
     </script>
 </body>
+<script src="../script/store-info.js"></script>
 
 </html>
